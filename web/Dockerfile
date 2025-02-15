@@ -17,6 +17,9 @@ RUN a2enmod rewrite
 # Copy Drupal files to the container
 COPY . /var/www/html/
 
+# Copy composer.json and composer.lock from the parent directory
+COPY composer.json composer.lock /var/www/html/
+
 # Set the working directory
 WORKDIR /var/www/html/web
 
